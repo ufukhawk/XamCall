@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamCallApp.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    NavigationPage.HasNavigationBar="False"
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    BackgroundColor="#BF110630"
+    mc:Ignorable="d">
+    <AbsoluteLayout>
+
+        <Image
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            Aspect="AspectFill"
+            Source="model.jpg" />
+        <pancakeview:PancakeView
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundGradientStartColor="#BF110630"
+            BackgroundGradientEndColor="Black">
+
+        </pancakeview:PancakeView>
+        <pancakeview:PancakeView
+            AbsoluteLayout.LayoutBounds="0,0,1,.4"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="Transparent">
+            <pancakeview:PancakeView>
+                <StackLayout Margin="20">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Image
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            Aspect="AspectFit"
+                            Source="menu"
+                            VerticalOptions="CenterAndExpand" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            Text="Profile"
+                            TextColor="White"
+                            VerticalOptions="CenterAndExpand" />
+                        <Image
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            Aspect="AspectFit"
+                            Source="menuaction"
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                    <StackLayout
+                        Margin="20,0,0,0"
+                        Orientation="Horizontal"
+                        Spacing="30"
+                        VerticalOptions="CenterAndExpand">
+                        <controls:CircleImage
+                            BorderThickness="2"
+                            BorderColor="White"
+                            WidthRequest="70"
+                            HeightRequest="70"
+                            sharedTransitions:Transition.Name="Profile"
+                            Aspect="AspectFill"
+                            Source="modelpp.jpg"
+                            HorizontalOptions="Start"
+                            VerticalOptions="CenterAndExpand" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="35"
+                            sharedTransitions:Transition.Name="Name"
+                            Text="Irene"
+                            TextColor="White"
+                            VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+            </pancakeview:PancakeView>
+        </pancakeview:PancakeView>
+        <StackLayout
+            TranslationY="0"
+            BackgroundColor="White"
+            sharedTransitions:Transition.Name="Body"
+            x:Name="BodyStack"
+            Padding="30,50,30,0"
+            AbsoluteLayout.LayoutBounds="1,1,1,.6"
+            AbsoluteLayout.LayoutFlags="All"
+            Spacing="30">
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <Image
+                    WidthRequest="20"
+                    HeightRequest="20"
+                    Source="ballB"
+                    VerticalOptions="StartAndExpand" />
+                <StackLayout Spacing="5" VerticalOptions="EndAndExpand">
+                    <Label
+                        FontSize="12"
+                        Text="PHONE"
+                        TextColor="DarkGray" />
+                    <Label
+                        FontSize="16"
+                        Text="123 444 666"
+                        TextColor="#110630" />
+                </StackLayout>
+            </StackLayout>
+            <BoxView HeightRequest=".5" BackgroundColor="#40110630" />
+
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <Image
+                    WidthRequest="20"
+                    HeightRequest="20"
+                    Source="mail"
+                    VerticalOptions="StartAndExpand" />
+                <StackLayout Spacing="5" VerticalOptions="EndAndExpand">
+                    <Label
+                        FontSize="12"
+                        Text="MAIL"
+                        TextColor="DarkGray" />
+                    <Label
+                        FontSize="16"
+                        Text="irene@gmail.com"
+                        TextColor="#110630" />
+                </StackLayout>
+            </StackLayout>
+            <BoxView HeightRequest=".5" BackgroundColor="#40110630" />
+
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <Image
+                    WidthRequest="20"
+                    Aspect="AspectFill" 
+                    HeightRequest="20"
+                    Source="messenger"
+                    VerticalOptions="StartAndExpand" />
+
+                <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="16"
+                        Text="Text with Meesenger"
+                        TextColor="#110630" />
+            </StackLayout>
+            <BoxView HeightRequest=".5" BackgroundColor="#40110630" />
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <Image
+                    WidthRequest="20"
+                    Aspect="AspectFill" 
+                    HeightRequest="20"
+                    Source="viber"
+                    VerticalOptions="StartAndExpand" />
+
+                <Label 
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="16"
+                        Text="Call with Viber"
+                        TextColor="#110630" />
+            </StackLayout>
+        </StackLayout>
+        <pancakeview:PancakeView
+            Margin="0,0,20,-25"
+            Padding="0"
+            WidthRequest="50"
+            HeightRequest="50"
+            sharedTransitions:Transition.Name="CallButton"
+            AbsoluteLayout.LayoutBounds="0,0,1,.4"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#FD558A"
+            CornerRadius="25"
+            HorizontalOptions="EndAndExpand"
+            VerticalOptions="EndAndExpand">
+            <pancakeview:PancakeView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="CallPage" ></TapGestureRecognizer>
+            </pancakeview:PancakeView.GestureRecognizers>
+            <controls:CircleImage
+                Margin="10"
+                WidthRequest="20"
+                HeightRequest="20"
+                Aspect="AspectFit"
+                Source="call" />
+        </pancakeview:PancakeView>
+    </AbsoluteLayout>
+</ContentPage>
