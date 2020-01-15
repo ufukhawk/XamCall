@@ -8,8 +8,31 @@
     xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     BackgroundColor="#BF110630"
     NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="PancakeStyle" TargetType="pancakeview:PancakeView">
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderColor" Value="White" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="CornerRadius" Value="25" />
+            </Style>
+            <Style x:Key="ImageStyle" TargetType="Image">
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <AbsoluteLayout>
-
         <Image
             AbsoluteLayout.LayoutBounds="0,0,1,1"
             AbsoluteLayout.LayoutFlags="All"
@@ -39,7 +62,6 @@
                     Source="modelpp.jpg"
                     HorizontalOptions="Start"
                     VerticalOptions="Center" />
-
                 <Label
                     sharedTransitions:Transition.Name="Name"
                     FontAttributes="Bold"
@@ -48,17 +70,16 @@
                     TextColor="White"
                     VerticalOptions="Center" />
             </StackLayout>
-
         </pancakeview:PancakeView>
         <StackLayout
             x:Name="BodyStack"
-            HorizontalOptions="CenterAndExpand"
             AbsoluteLayout.LayoutBounds="1,1,1,.6"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="Transparent"
             Spacing="30"
-            TranslationY="0">
-            <Grid >
+            TranslationY="0"
+            HorizontalOptions="CenterAndExpand">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100" />
                     <RowDefinition Height="100" />
@@ -68,141 +89,62 @@
                     <ColumnDefinition Width="100" />
                     <ColumnDefinition Width="100" />
                 </Grid.ColumnDefinitions>
-                <StackLayout Spacing="10" Grid.Row="0" Grid.Column="0">
-                    <pancakeview:PancakeView
-                        WidthRequest="50"
-                        HeightRequest="50"
-                        HorizontalOptions="CenterAndExpand"
-                        BorderColor="White"
-                        BorderThickness="1"
-                        CornerRadius="25">
-                        <Image
-                            WidthRequest="30"
-                            HeightRequest="30"
-                            Aspect="AspectFit"
-                            Source="mute"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="CenterAndExpand" />
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Spacing="10">
+                    <pancakeview:PancakeView Style="{StaticResource PancakeStyle}">
+                        <Image Source="mute" Style="{StaticResource ImageStyle}" />
                     </pancakeview:PancakeView>
-                    <Label
-                        FontSize="13"
-                        TextColor="White"
-                        Text="Mute"
-                        HorizontalOptions="CenterAndExpand" />
+                    <Label Style="{StaticResource LabelStyle}" Text="Mute" />
                 </StackLayout>
-                <StackLayout Spacing="10" Grid.Row="0" Grid.Column="1">
-                    <pancakeview:PancakeView
-                        WidthRequest="50"
-                        HeightRequest="50"
-                        HorizontalOptions="CenterAndExpand"
-                        BorderColor="White"
-                        BorderThickness="1"
-                        CornerRadius="25">
-                        <Image
-                            WidthRequest="30"
-                            HeightRequest="30"
-                            Aspect="AspectFit"
-                            Source="speaker"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="CenterAndExpand" />
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Spacing="10">
+                    <pancakeview:PancakeView Style="{StaticResource PancakeStyle}">
+                        <Image Source="speaker" Style="{StaticResource ImageStyle}" />
                     </pancakeview:PancakeView>
-                    <Label
-                        FontSize="13"
-                        TextColor="White"
-                        Text="Speaker"
-                        HorizontalOptions="CenterAndExpand" />
+                    <Label Style="{StaticResource LabelStyle}" Text="Speaker" />
                 </StackLayout>
-                <StackLayout Spacing="10" Grid.Row="0" Grid.Column="2">
-                    <pancakeview:PancakeView
-                        WidthRequest="50"
-                        HeightRequest="50"
-                        HorizontalOptions="CenterAndExpand"
-                        BorderColor="White"
-                        BorderThickness="1"
-                        CornerRadius="25">
-                        <Image
-                           WidthRequest="30"
-                            HeightRequest="30"
-                            Aspect="AspectFit"
-                            Source="keyboard"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="CenterAndExpand" />
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Spacing="10">
+                    <pancakeview:PancakeView Style="{StaticResource PancakeStyle}">
+                        <Image Source="keyboard" Style="{StaticResource ImageStyle}" />
                     </pancakeview:PancakeView>
-                    <Label
-                        FontSize="13"
-                        TextColor="White"
-                        Text="Keypad"
-                        HorizontalOptions="CenterAndExpand" />
+                    <Label Style="{StaticResource LabelStyle}" Text="Keypad" />
                 </StackLayout>
-                <StackLayout Spacing="10" Grid.Row="1" Grid.Column="0">
-                    <pancakeview:PancakeView
-                        WidthRequest="50"
-                        HeightRequest="50"
-                        HorizontalOptions="CenterAndExpand"
-                        BorderColor="White"
-                        BorderThickness="1"
-                        CornerRadius="25">
-                        <Image
-                            WidthRequest="30"
-                            HeightRequest="30"
-                            Aspect="AspectFit"
-                            Source="add"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="CenterAndExpand" />
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Spacing="10">
+                    <pancakeview:PancakeView Style="{StaticResource PancakeStyle}">
+                        <Image Source="add" Style="{StaticResource ImageStyle}" />
                     </pancakeview:PancakeView>
-                    <Label
-                        FontSize="13"
-                        TextColor="White"
-                        Text="Add call"
-                        HorizontalOptions="CenterAndExpand" />
+                    <Label Style="{StaticResource LabelStyle}" Text="Add call" />
                 </StackLayout>
-                <StackLayout Spacing="10" Grid.Row="1" Grid.Column="1">
-                    <pancakeview:PancakeView
-                        WidthRequest="50"
-                        HeightRequest="50"
-                        HorizontalOptions="CenterAndExpand"
-                        BorderColor="White"
-                        BorderThickness="1"
-                        CornerRadius="25">
-                        <Image
-                           WidthRequest="30"
-                            HeightRequest="30"
-                            Aspect="AspectFit"
-                            Source="callTransfer"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="CenterAndExpand" />
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Spacing="10">
+                    <pancakeview:PancakeView Style="{StaticResource PancakeStyle}">
+                        <Image Source="callTransfer" Style="{StaticResource ImageStyle}" />
                     </pancakeview:PancakeView>
-                    <Label
-                        FontSize="13"
-                        TextColor="White"
-                        Text="Call Transfer"
-                        HorizontalOptions="CenterAndExpand" />
+                    <Label Style="{StaticResource LabelStyle}" Text="Call Transfer" />
                 </StackLayout>
-                <StackLayout Spacing="10" Grid.Row="1" Grid.Column="2">
-                    <pancakeview:PancakeView
-                        WidthRequest="50"
-                        HeightRequest="50"
-                        HorizontalOptions="CenterAndExpand"
-                        BorderColor="White"
-                        BorderThickness="1"
-                        CornerRadius="25">
-                        <Image 
-                            WidthRequest="30"
-                            HeightRequest="30"
-                            Aspect="AspectFit"
-                            Source="contact"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="CenterAndExpand" />
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Spacing="10">
+                    <pancakeview:PancakeView Style="{StaticResource PancakeStyle}">
+                        <Image Source="contact" Style="{StaticResource ImageStyle}" />
                     </pancakeview:PancakeView>
-                    <Label
-                        FontSize="13"
-                        TextColor="White"
-                        Text="Contact"
-                        HorizontalOptions="CenterAndExpand" />
+                    <Label Style="{StaticResource LabelStyle}" Text="Contact" />
                 </StackLayout>
             </Grid>
         </StackLayout>
-
         <StackLayout
             Margin="0,0,0,0"
             HeightRequest="20"
@@ -225,7 +167,6 @@
             <pancakeview:PancakeView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="EndCall" />
             </pancakeview:PancakeView.GestureRecognizers>
-
             <Image
                 Margin="20"
                 WidthRequest="20"

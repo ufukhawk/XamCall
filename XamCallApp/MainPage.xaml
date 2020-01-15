@@ -10,8 +10,8 @@
     xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
     BackgroundColor="#BF110630"
     mc:Ignorable="d">
-    <AbsoluteLayout>
 
+    <AbsoluteLayout>
         <Image
             AbsoluteLayout.LayoutBounds="0,0,1,1"
             AbsoluteLayout.LayoutFlags="All"
@@ -22,9 +22,9 @@
             AbsoluteLayout.LayoutFlags="All"
             BackgroundGradientStartColor="#BF110630"
             BackgroundGradientEndColor="Black">
-
         </pancakeview:PancakeView>
         <pancakeview:PancakeView
+            Margin="0,20,0,0"
             AbsoluteLayout.LayoutBounds="0,0,1,.4"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="Transparent">
@@ -78,7 +78,6 @@
             </pancakeview:PancakeView>
         </pancakeview:PancakeView>
         <StackLayout
-            TranslationY="0"
             BackgroundColor="White"
             sharedTransitions:Transition.Name="Body"
             x:Name="BodyStack"
@@ -131,7 +130,6 @@
                     HeightRequest="20"
                     Source="messenger"
                     VerticalOptions="StartAndExpand" />
-
                 <Label
                         VerticalOptions="CenterAndExpand"
                         FontSize="16"
